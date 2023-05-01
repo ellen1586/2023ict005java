@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int total;
+		int sort;
+		int price;
+		int cnt;
+		int sum = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		total = sc.nextInt();
+		sort = sc.nextInt();
+		
+		for(int i = 0; i < sort; i ++) {
+			price = sc.nextInt();
+			cnt = sc.nextInt();
+			sum +=(price * cnt);
+		}	
+		if(total == sum) {
+			System.out.println("Yes");
+			
+		}else  {
+			System.out.println("No");
+		}
+		
+	}
+}

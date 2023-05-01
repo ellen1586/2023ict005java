@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+        int [] boxArry = new int[N];
+        
+        for(int a=0; a<N; a++){
+            boxArry[a] = a+1;
+        }
+        
+        int i;
+        int j;
+        
+        for(int a=0; a<M; a++){
+            i = sc.nextInt();
+            j = sc.nextInt();
+            int b = i-1;
+            int k = 0;
+            
+            while(k<((j-i)+1)/2){
+                int t = 0;
+                
+                t = boxArry[b];
+                boxArry[b] = boxArry[j-1-k];
+                boxArry[j-1-k] = t;
+                
+                k++;
+                b++;
+            }
+        }
+        
+        for(int num: boxArry)
+            System.out.printf("%d ", num);
+    }
+}
